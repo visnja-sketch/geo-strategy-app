@@ -25,8 +25,10 @@ export default function Home() {
       });
 
       if (!response.ok) {
-        const err = await response.json();
-        throw new Error(err.error || "Failed to generate strategy");
+        const text = await response.text();
+        let message = "Failed to generate strategy";
+        try { message = JSON.parse(text).error || message; } catch {}
+        throw new Error(message);
       }
 
       if (!response.body) throw new Error("No response body");

@@ -1,6 +1,8 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextRequest } from "next/server";
 
+export const maxDuration = 300;
+
 const GEO_SYSTEM_PROMPT = `You are a Generative Engine Optimization (GEO) specialist. Your expertise is in making brands and websites get cited, recommended, and mentioned in AI-generated responses from ChatGPT, Perplexity, Gemini, Claude, and other large language models.
 
 You understand how LLMs select sources to cite, how they determine brand authority and relevance, and what content signals increase the probability of being recommended in AI-generated answers. You know that GEO is fundamentally different from traditional SEO — it's about becoming a trusted, authoritative source that AI models reference when generating answers.
